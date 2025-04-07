@@ -1,0 +1,234 @@
+/* style.css */
+body {
+    font-family: "微软雅黑", Arial;
+    margin: 0;
+    background-color:#B84B48; /* 深灰色背景 */
+    color: #FFFFFF; /* 白色文字 */}
+
+/* 导航栏样式 */
+nav {
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #5B3F2A; /* 深棕色背景 */
+    padding: 10px 20px;
+}
+
+.logo h1 {
+     margin: 0;
+    font-size: 24px;
+    color: #D4AF37; /* 金色文字 */
+}
+.search {
+    display: flex;
+    gap: 5px;
+}
+
+.search input {
+    background-color: #333333;
+    border: 1px solid #5B3F2A;
+    color: #FFFFFF;
+    padding: 5px;
+}
+
+.search button {
+    background-color: #D4AF37; /* 金色按钮 */
+    border: none;
+    color: #333333;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.login a {
+    color: #D4AF37; /* 金色链接 */
+    text-decoration: none;
+    font-size: 14px;
+}
+.date {
+    font-size: 14px;
+}
+#modules {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.module {
+    background-color: #333333;
+    border: 1px solid #5B3F2A;
+    padding: 20px;
+    width: calc(33.33% - 20px);
+    text-align: center;
+}
+
+.module h3 {
+    color: #D4AF37; /* 金色标题 */
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: #FFD700; /* 金色链接 */
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/* 轮播图样式 */
+.swiper {
+    width: 50%;
+    height: 700px;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #8B4513; /* 深棕色背景 */
+    border: 1px solid #FFC0CB; /* 深灰色边框 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.swiper-slide img {
+    max-width: 100%;
+    height: auto;
+}
+.swiper-slide-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #FFFFFF;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px; /* 减少内容的内边距 */
+    border-radius: 10px;
+}
+
+.swiper-slide h2 {
+    color: #FFD700; /* 金色标题 */
+    text-align: center;
+    font-size: 24px;
+}
+.swiper-slide .more {
+    display: inline-block;
+    background-color: #D4AF37; /* 金色按钮 */
+    color: #333333;
+    text-decoration: none;
+    padding: 5px 10px; /* 减少按钮的内边距 */
+    border-radius: 5px;
+    margin-top: 10px; /* 减少按钮与内容的间距 */
+}
+/* 模块样式 */
+section {
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #FAF0E6; /* 米白色背景 */
+    border: 1px solid #8B4513; /* 深棕色边框 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+section h2 {
+   color: #D4AF37; /* 金色标题 */
+}
+
+section img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+
+section p {
+    text-align: center;
+    font-size: 16px;
+    color: #333333; /* 深灰色文字 */
+}
+/* 模块二：缘起·灯样式 */
+#origin {
+    padding: 20px;
+    background-color:#FAF0E6;; /* 深灰色背景 */
+    color: #333333; /* 白色文字 */
+text-align: left; /* 文字左对齐 */
+}
+
+#origin h2, #origin h3 {
+    color: #D4AF37; /* 金色标题 */
+margin-bottom: 10px; /* 减少标题间距 */
+}
+
+#origin p {
+    line-height: 1.5; /* 调整行间距 */
+    margin-bottom: 10px; /* 减少段落间距 */
+text-align: left; /* 确保段落文字左对齐 */
+}
+
+footer {
+    background-color: #5B3F2A; /* 深棕色背景 */
+    padding: 5px 10px;
+    text-align: center;
+    color: #FFFFFF;
+}
+/* 模块三：传承·人样式 */
+#people {
+    padding: 20px;
+    background-color: #FAF0E6; /* 深灰色背景 */
+    color: #333333; /* 白色文字 */
+text-align: left; /* 文字左对齐 */
+}
+
+#people h2, #people h3 {
+    color: #D4AF37; /* 金色标题 */
+margin-bottom: 10px; /* 减少标题间距 */
+}
+
+#people p {
+    line-height: 1.5; /* 调整行间距 */
+    margin-bottom: 10px; /* 减少段落间距 */
+text-align: left; /* 确保段落文字左对齐 */
+}
+
+/* 传承人样式 */
+.传承人 {
+    margin-bottom: 20px;
+}
+/* 模块四：展示·物样式 */
+#exhibition {
+    padding: 20px;
+    background-color: #FAF0E6; /* 深灰色背景 */
+    color: #333333; /* 白色文字 */
+text-align: left; /* 文字左对齐 */
+}
+
+#exhibition h2, #exhibition h3 {
+    color: #D4AF37; /* 金色标题 */
+margin-bottom: 10px; /* 减少标题间距 */
+}
+
+#exhibition p {
+    line-height: 1.5; /* 调整行间距 */
+    margin-bottom: 10px; /* 减少段落间距 */
+text-align: left; /* 确保段落文字左对齐 */
+}
+
+/* 展示物品样式 */
+.exhibit-item {
+    margin-bottom: 20px;
+}
+
+.exhibit-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px 0;
+}
+
+/* 底部样式 */
+footer {
+    background-color: #5B3F2A; /* 深棕色背景 */
+    padding: 10px 20px; /* 减少底部的内边距 */
+    text-align: center;
+    color: #FFFFFF;
+}‌‍
