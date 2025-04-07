@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>青春“虾”一站:大学生点亮灯彩非遗</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav>
+        <div class="logo">
+            <h1>青春“虾”一站:大学生点亮灯彩非遗</h1>
+        </div>
+        <div class="date">
+            <p>今天是：<span id="current-date"></span></p>
+        </div>
+      <div class="search">
+            <input type="text" placeholder="请输入关键字">
+            <button>搜索</button>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="origin.html">缘起·灯</a></li>
+            <li><a href="people.html">传承·人</a></li>
+            <li><a href="exhibition.html">展示·物</a></li>
+        </ul>
+    </nav>
+  <section id="home">
+        <h2>模块一：首页</h2>
+
+       </section>
+    <!-- 轮播图 -->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="images/虾子灯背景1.jpg" alt="虾子灯背景图">
+                <h2>主题一：虾子灯的历史</h2>
+            </div>
+            <div class="swiper-slide">
+                <img src="images/虾子灯背景2.jpg" alt="虾子灯背景图">
+                <h2>主题二：虾子灯的制作</h2>
+            </div>
+            <div class="swiper-slide">
+                <img src="images/虾子灯背景3.jpg" alt="虾子灯背景图">
+                <h2>主题三：虾子灯的文化</h2>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            loop: true, // 循环模式
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            autoplay: {
+                delay: 3000, // 自动切换时间
+            },
+        });
+
+        // 动态显示当前日期
+        function displayCurrentDate() {
+            const currentDateElement = document.getElementById('current-date');
+            const now = new Date();
+            const formattedDate = now.toLocaleDateString('zh-CN', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            currentDateElement.textContent = formattedDate;
+        }
+
+        // 初始化日期显示
+        displayCurrentDate();
+
+        // 每天更新日期
+        setInterval(displayCurrentDate, 86400000); // 86400000毫秒 = 1天
+    </script>
+</body>
+  <!-- 模块二：缘起·灯 -->
+    <section id="origin">
+        <h2>模块二：缘起·灯</h2>
+        <p>盛桥虾子灯：一座临湖小镇的独特符号</p>
+        <p>虾子灯，流传于巢湖南岸盛桥镇，至今已有300多年的历史，是当地渔民祈求国泰民安、鱼虾满舱的一种表演形式，已被列入合肥市第四批非物质文化遗产名录。历经岁月的变迁，虾子灯的照明设备与吹奏乐曲都进行了不断地改进。</p>
+
+        <!-- 起源传说 -->
+        <h3>起源传说</h3>
+        <p>传说早在唐朝时期，有一年巢湖发大水，盛桥镇边的村民听到东边有金鸡报晓的声音，遂循声找去，看见村庄东边的河上漂着一对很漂亮的木质骨架子，便捡回家。全村人议论纷纷，不知道这是何物。有人猜测是神龙，有人猜测是虾子，后来大家比较一致地认为应该是虾子，因为外形不像神龙而有点像虾子。并且神龙不应该是成对出现。对虾会搏水嬉戏，虾子下仔，神意为子龙，即虾龙来了，子孙富贵，是很吉祥的事情。于是，村民便在村长的带领下模仿真虾而编扎虾子灯。</p>
+
+        <!-- 制作表演 -->
+        <h3>制作表演</h3>
+        <p>虾子灯是黑、白两对虾子灯的总称，它分别由灯头和灯尾组成。每条灯长约1丈1尺至1丈2尺（4米左右），形状如虾子般，内放七盏灯。灯架用青篾编扎，灯球用纸糊，选用上等好材料作为虾子皮，用黑色老棉布作为虾子皮的称为黑虾子灯，用白色老棉布作为虾子皮的称为白虾子灯。虾子皮上粘贴着用宣纸制成的多种颜色图形彩绘，以前用红蜡烛串装在灯中，点亮蜡烛后整个虾子灯鲜艳夺目，造型相如生，观赏性很强。</p>
+        <p>盛桥镇由多个不同姓氏的村庄组成，但据说只有姓丁的人家才会扎灯。玩灯期间，用于制作灯架的篾和纸要根据情况不断换新。以前虾子灯灯心是用点燃蜡烛的形式来照明，现在有的改用蓄电池灯来代替，但由于蓄电池比较重，所以玩起来比较累。一个虾子灯要用两个蓄电池，共需8个蓄电池来进行交换。</p>
+        <p>虾子灯的表演时间是从每年的正月初十开始，一直表演到元宵节这天。新中国成立后至1966年，是每年都要进行表演的。1967年至1976年间，由于受到文化大革命的影响而没有进行表演。从1977年开始到上世纪末，又是每年进行表演。进入2000年以来，由于城镇化发展及农村青壮年男子进城打工逐渐增多，导致在农村留守的青壮年男子人数逐年减少，由刚开始的3年表演2次（即间隔1年表演）的模式逐渐演变为现在的3~4年表演1次。</p>
+        <p>虾子灯的表演过程可分为请神、走边、接灯、披红、回神等。虾子灯如今放在小岗村灯堂里的木架子上，要选择农历的双日子（最早是正月初八，最迟是正月十四）燃放鞭炮恭敬地请下虾子灯，当地人必须说是“请下”或“请神”，而不能说是“拿下”。表演结束也必须在农历的双日子敲锣打鼓、燃放鞭炮，方可将虾子灯放回木质架子上，称为“回神”。</p>
+        <p>虾子灯的表演包括灯头和灯尾的表演。灯头一般由盛桥镇小岗村的人进行表演，灯尾一般由薛岗村的人来进行。虾子灯表演时要用歌词的形式来祝福或者答谢村民。</p>
+
+        <!-- 团队走访 -->
+        <h3>团队走访</h3>
+        <p>今年三月下旬，在提前与虾子灯传承人夏长贵老师对接好后，团队成员便动身前往虾子灯堂参观。虾子灯堂坐落于小岗新村内，走进便可看见两架虾子灯摆放在内，每条都几乎与堂宽等长（约五米七八）。</p>
+        <p>虾子灯共由虾头、虾身和虾尾三部分构成，虾身和虾尾主要是灯笼，每个灯笼上都有传承人手绘的图案，一般和当地的稻虾产业有关，水墨勾勒，栩栩如生。</p>
+    </section>
+ <section id="people">
+        <h2>模块三：传承·人</h2>
+        <p>盛桥虾子灯的传承方式几乎都是子承父业。调查表明，由于现在年轻人普遍对玩灯的兴趣不大，所以当前从事虾子灯传承的人员年龄普遍较大。</p>
+
+        <!-- 丁长乐介绍 -->
+        <div class="传承人">
+            <h3>丁长乐</h3>
+            <p>庐江盛桥人，今年68岁，是家中虾子灯第三代传承人，其祖父在民国时期就接触到了虾子灯非遗的传承工作。长乐老师目前主要负责盛桥镇对虾子灯的扎灯制作工作，为了让灯扎地更惟妙惟肖，他还自学了绘画，平时没事就用墨水颜料在纸上练习，十年磨一剑，如今这位从未接触过专业美术训练的老人，画出的虾子和花卉却栩栩如生。</p>
+        </div>
+
+        <!-- 团队走访 -->
+        <h3>团队走访</h3>
+        <p>来到盛桥镇的一处小巷，走过几颗桃枝，左拐便是丁家老宅。刚见面时，双方都有点局促，在得知了我们的来意后，丁爷爷的紧张情绪也如春化雪，渐渐消融。他停下手中的活，认真倾听我们的问题，一一耐心解答。但是因为语言不通，有些词语我们听不懂，丁爷爷便不厌其烦地重复，直到我们弄明白。”你们想要问什么，尽管问，我知道的都会告诉你们。“丁爷爷说。</p>
+        <p>临近午时，采访结束。我们收获满满，尽兴而归。</p>
+        <p>“爷爷，那我们先走了，您身体健康啊！”</p>
+        <p>“哎好！谢谢你们！”丁爷爷挥着手将我们送至门口。</p>
+        <p>这趟乘兴而来的采访经历，让我们知道了为什么虾子灯的三百年如此深厚，非遗不是没有灵魂的历史年历，他是丁爷爷乃至更多非遗传承人的精神寄托和殷殷期盼。</p>
+    </section>
+<!-- 模块四：展示·物 -->
+    <section id="exhibition">
+        <h2>模块四：展示·物</h2>
+        <p>展示虾子灯的各种实物和相关文物，以及相关的文创产品和宣传平台。</p>
+
+        <!-- 报纸展示 -->
+        <div class="exhibit-item">
+            <h3>报纸</h3>
+            <p>展示与虾子灯相关的报纸报道和文章，记录了虾子灯的历史和传承。</p>
+            <img src="images/报纸.jpg" alt="报纸展示">
+        </div>
+
+        <!-- IP形象虾瑞瑞 -->
+        <div class="exhibit-item">
+            <h3>IP形象虾瑞瑞</h3>
+            <p>虾瑞瑞是虾子灯的官方IP形象，代表了虾子灯的吉祥和美好寓意。</p>
+            <img src="images/虾瑞瑞.jpg" alt="IP形象虾瑞瑞">
+        </div>
+
+        <!-- 文创周边 -->
+        <div class="exhibit-item">
+            <h3>文创周边</h3>
+            <p>展示与虾子灯相关的文创产品，如纪念品、手工艺品等，这些产品不仅具有文化价值，还能让更多人了解虾子灯。</p>
+            <img src="images/文创周边.jpg" alt="文创周边">
+   </div>
+
+        <!-- 宣传平台跳转二维码 -->
+        <div class="exhibit-item">
+            <h3>宣传平台跳转二维码</h3>
+            <p>扫描以下二维码，访问虾子灯的官方宣传平台，了解更多相关信息。</p>
+            <img src="images/二维码.jpg" alt="宣传平台跳转二维码">
+        </div>
+    </section>
+</html>
