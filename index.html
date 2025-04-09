@@ -1,82 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>青春“虾”一站:大学生点亮灯彩非遗</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <title>青春"虾"一站</title>
+    <style>
+        /* 基础重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 背景容器 */
+        .page-container {
+            position: relative;
+            min-height: 100vh;
+            background: 
+                linear-gradient(rgba(0,0,0,0.3), 
+                url(https://raw.githubusercontent.com/hahaha-195/xiazideng/main/background.jpg);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* 内容容器 */
+        .content-wrapper {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+            color: #fff;
+        }
+
+        /* 头部区域 */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: rgba(0,0,0,0.5);
+            border-radius: 10px;
+        }
+
+        /* 搜索框样式 */
+        .search-box {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        input[type="text"] {
+            padding: 8px 15px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.9);
+        }
+    </style>
 </head>
 <body>
-<div id="home-container">
-  <div class="background-layer"></div> <!-- 背景层 -->
-  <section class="content-layer"></section> <!-- 内容层 -->
-</div>
-    <!-- 导航栏 -->
-    <nav>
-        <div class="logo">
-            <h1>青春“虾”一站:大学生点亮灯彩非遗</h1>
-        </div>
-        <div class="date">
-            <p>今天是：<span id="current-date"></span></p>
-        </div>
-      <div class="search">
-            <input type="text" placeholder="请输入关键字">
-            <button>搜索</button>
-        </div>
-        <ul class="nav-links">
-            <li><a href="index.html">首页</a></li>
-            <li><a href="origin.html">缘起·灯</a></li>
-            <li><a href="people.html">传承·人</a></li>
-            <li><a href="exhibition.html">展示·物</a></li>
-        </ul>
-    </nav>
- <section id="home">
-  <h2>模块一：首页</h2>
-  <img src="https://raw.githubusercontent.com/hahaha-195/xiazideng/main/背景.jpg" alt="背景">
-  
-  <!-- 添加日期显示容器 -->
-  <div id="current-date" class="date-display"></div>
+    <div class="page-container">
+        <div class="content-wrapper">
+            <!-- 头部 -->
+            <header class="header">
+                <div>
+                    <h1>青春"虾"一站: 大学生点亮灯彩非遗</h1>
+                    <div id="current-date" class="date-display"></div>
+                </div>
+                <nav>
+                    <ul style="display: flex; gap: 20px; list-style: none;">
+                        <li>首页</li>
+                        <li>像梭灯</li>
+                        <li>传承人</li>
+                        <li>展示物</li>
+                    </ul>
+                </nav>
+            </header>
 
-  <!-- 正确的脚本标签位置 -->
-  <script>
-  // 确保DOM加载完成
-  document.addEventListener('DOMContentLoaded', function() {
-    // 日期显示函数
-    function displayCurrentDate() {
-      const currentDateElement = document.getElementById('current-date');
-      const now = new Date();
-      
-      // 添加时区修正 (中国大陆使用东八区)
-      const options = { 
-        timeZone: 'Asia/Shanghai',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-        hour12: false
-      };
-      
-      currentDateElement.textContent = now.toLocaleDateString('zh-CN', options);
-    }
+            <!-- 搜索区域 -->
+            <div class="search-box">
+                <input type="text" placeholder="请输入关键字">
+                <button>搜索</button>
+            </div>
 
-    // 初始化显示
-    displayCurrentDate();
+            <!-- 主内容 -->
+            <main>
+                <h2>模块一：首页</h2>
+                <!-- 后续内容 -->
+            </main>
+        </div>
+    </div>
 
-    // 智能刷新策略 (解决时区切换问题)
-    const now = new Date();
-    const nextDay = new Date(now);
-    nextDay.setDate(now.getDate() + 1);
-    nextDay.setHours(0, 0, 0, 0);
-    
-    // 计算到次日0点的剩余时间
-    const timeout = nextDay - now;
-    setTimeout(function() {
-      displayCurrentDate();
-      // 之后每天刷新
-      setInterval(displayCurrentDate, 86400000);
-    }, timeout);
-  });
-  </script>
+    <script>
+        // 动态日期显示优化版
+        document.addEventListener('DOMContentLoaded', () => {
+            const formatDate = () => {
+                const options = {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    timeZone: 'Asia/Shanghai'
+                }
+                return new Date().toLocaleDateString('zh-CN', options)
+            }
+
+            const dateElement = document.getElementById('current-date')
+            dateElement.innerHTML = `今天是：<strong>${formatDate()}</strong>`
+
+            // 智能更新时间
+            const updateAtMidnight = () => {
+                const now = new Date()
+                const night = new Date(
+                    now.getFullYear(),
+                    now.getMonth(),
+                    now.getDate() + 1
+                )
+                const timeout = night - now
+                
+                setTimeout(() => {
+                    dateElement.innerHTML = `今天是：<strong>${formatDate()}</strong>`
+                    updateAtMidnight()
+                }, timeout)
+            }
+            updateAtMidnight()
+        })
+    </script>
 </body>
   <!-- 模块二：缘起·灯 -->
     <section id="origin">
