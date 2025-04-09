@@ -30,23 +30,18 @@ main {
 }
 
 .background-layer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("你的背景图地址.jpg") center/cover;
-  transform: translateZ(-1px);
+  background:
+    linear-gradient(rgba(0,0,0,0.2), /* 叠加黑色半透明层 */
+    url(bg.jpg) center/cover; /* 自适应填充 */
+  filter: blur(0px); /* 可调节模糊度 */
+  transform: scale(1.05); /* 防边缘留白 */
 }
 
 .content-layer {
-  position: relative;
-  max-width: 800px;
-  margin: 20vh auto 0;
-  padding: 40px;
-  background: rgba(0, 0, 0, 0.7); /* 深色半透明 */
-  color: white;
-  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.6); /* 深色半透明底 */
+  backdrop-filter: blur(5px); /* 毛玻璃效果 */
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.3);
 }
 </style>
 
