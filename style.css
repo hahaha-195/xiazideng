@@ -1,13 +1,26 @@
 /* style.css */
 body {
-    font-family: "微软雅黑", Arial;
-    margin: 0;
-  background-image: url("<img src="https://raw.githubusercontent.com/hahaha-195/xiazideng/main/背景.jpg"");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-    color: #FFFFFF; /* 白色文字 */}
+  font-family: "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  color: #fff;
+  
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("https://raw.githubusercontent.com/hahaha-195/xiazideng/main/background.jpg")
+    center / cover no-repeat fixed;
+  
+  /* 移动端优化 */
+  @media (max-width: 768px) {
+    background-attachment: scroll;
+  }
+}
 
+/* 提升文字可读性 */
+main {
+  position: relative;
+  z-index: 1;
+}
 /* 导航栏样式 */
 nav {
   display: flex;
