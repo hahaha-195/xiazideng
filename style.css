@@ -48,7 +48,8 @@ main {
 }
 
 <div class="parallax-container">
-  <div class="background-layer"></div>
+  <div class="background-layer">
+</div>
   <div class="content-layer">
     <h2>你的标题</h2>
     <p>滚动时背景保持固定...</p>
@@ -63,20 +64,7 @@ nav {
     background-color: #5B3F2A; /* 深棕色背景 */
     padding: 10px 20px;
 }
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  position: relative;
-  z-index: 100;
-}
 
-.logo {
-  flex: 1;
-  text-align: left;
-}
 
 .logo h1 {
   margin: 0;
@@ -84,38 +72,31 @@ nav {
   color: #D4AF37; /* 金色文字 */
   font-weight: bold;
 }
-.search-group {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
+.search {
+    display: flex;
+    gap: 5px;
+}
+.search input {
+    background-color: #333333;
+    border: 1px solid #5B3F2A;
+    color: #FFFFFF;
+    padding: 5px;
 }
 
-.search-group input {
-  background-color: #333333;
-  border: 1px solid #5B3F2A;
-  color: #FFFFFF;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  width: 150px; /* 可以根据需要调整宽度 */
+.search button {
+    background-color: #D4AF37; /* 金色按钮 */
+    border: none;
+    color: #333333;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.login a {
+    color: #D4AF37; /* 金色链接 */
+    text-decoration: none;
+    font-size: 14px;
 }
 
-.search-group button {
-  background-color: #D4AF37; /* 金色按钮 */
-  border: none;
-  color: #333333;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  border-radius: 5px;
-}
-.search-group button:hover {
-  color: #FFD700;
-  transform: scale(1.05); /* 悬停时轻微放大 */
-}
-.date {
-  font-size: 14px;
-  color: #FFFFFF;
-  margin-left: auto;
-}
+
  .nav-menu {
     flex-direction: column;
     align-items: center;
@@ -137,7 +118,11 @@ nav {
   transform: scale(1.05); /* 悬停时轻微放大 */
   
 }
-
+.date {
+  font-size: 14px;
+  color: #FFFFFF;
+  margin-left: auto;
+}
 
 #modules {
     display: flex;
