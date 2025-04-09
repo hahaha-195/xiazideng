@@ -2,7 +2,7 @@
 body {
     font-family: "微软雅黑", Arial;
     margin: 0;
-  background-image: url("your-image.jpg");
+  background-image: url("<img src="https://raw.githubusercontent.com/hahaha-195/xiazideng/main/背景.jpg"");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
