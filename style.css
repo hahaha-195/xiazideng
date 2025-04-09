@@ -28,7 +28,16 @@ main {
   overflow-y: auto;
   perspective: 1px;
 }
+.page-container {
+    background: 
+        linear-gradient(rgba(0,0,0,0.3)), /* 增加遮罩透明度 */
+        url(...) center/cover fixed; /* 固定背景提升质感 */
+}
 
+.header {
+    backdrop-filter: blur(5px); /* 添加毛玻璃效果 */
+    box-shadow: 0 4px 30px rgba(0,0,0,0.1); /* 微妙投影 */
+}
 .background-layer {
   background:
     linear-gradient(rgba(0,0,0,0.2), /* 叠加黑色半透明层 */
