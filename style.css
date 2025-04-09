@@ -28,7 +28,6 @@ main {
   overflow-y: auto;
   perspective: 1px;
 }
-<style>
 
 .header {
     backdrop-filter: blur(5px); /* 添加毛玻璃效果 */
@@ -76,6 +75,10 @@ nav {
   position: relative;
   z-index: 100;
 }
+.logo {
+  flex: 1 1 300px;
+  min-width: 250px;
+}
 .logo h1 {
      margin: 0;
     font-size: 24px;
@@ -99,6 +102,24 @@ nav {
     color: #333333;
     padding: 5px 10px;
     cursor: pointer;
+}
+.search-group {
+  flex: 2 1 400px;
+  display: flex;
+  gap: 0.5rem;
+  max-width: 500px;
+}
+.search-group input {
+  flex: 1;
+  min-width: 150px;
+  padding: 0.5rem 1rem;
+}
+.nav-menu {
+  flex: 1 1 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.5rem;
+  margin-top: 1rem;
 }
 .login a {
     color: #D4AF37; /* 金色链接 */
