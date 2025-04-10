@@ -7,7 +7,7 @@ body {
   
   background: 
     linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url("https://raw.githubusercontent.com/hahaha-195/xiazideng/main/背景.jpg")
+    url("https://raw.githubusercontent.com/hahaha-195/xiazideng/main/background.jpg")
     center / cover no-repeat fixed;
   
   /* 移动端优化 */
@@ -21,40 +21,6 @@ main {
   position: relative;
   z-index: 1;
 }
-.parallax-container {
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto;
-  perspective: 1px;
-}
-
-.header {
-    backdrop-filter: blur(5px); /* 添加毛玻璃效果 */
-    box-shadow: 0 4px 30px rgba(0,0,0,0.1); /* 微妙投影 */
-}
-.background-layer {
-  background:
-    linear-gradient(rgba(0,0,0,0.2), /* 叠加黑色半透明层 */
-    url(bg.jpg) center/cover; /* 自适应填充 */
-  filter: blur(0px); /* 可调节模糊度 */
-  transform: scale(1.05); /* 防边缘留白 */
-}
-
-.content-layer {
-  background: rgba(0, 0, 0, 0.6); /* 深色半透明底 */
-  backdrop-filter: blur(5px); /* 毛玻璃效果 */
-  border-radius: 15px;
-  box-shadow: 0 0 30px rgba(0,0,0,0.3);
-}
-
-<div class="parallax-container">
-  <div class="background-layer">
-</div>
-  <div class="content-layer">
-    <h2>你的标题</h2>
-    <p>滚动时背景保持固定...</p>
-  </div>
-</div>
 /* 导航栏样式 */
 nav {
   display: flex;
@@ -96,7 +62,6 @@ nav {
 .date {
     font-size: 14px;
 }
-
 #modules {
     display: flex;
     flex-wrap: wrap;
