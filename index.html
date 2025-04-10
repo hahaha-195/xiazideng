@@ -29,10 +29,7 @@
      </nav>
    <section id="home">
          <h2>模块一：首页</h2>
-      </section>
                  <img src="https://raw.githubusercontent.com/hahaha-195/xiazideng/main/背景.jpg"alt="背景">
-  </section>
-  <div id="current-date">
          // 动态显示当前日期
          function displayCurrentDate() {
              const currentDateElement = document.getElementById('current-date');
@@ -44,14 +41,58 @@
              });
              currentDateElement.textContent = formattedDate;
          }
+  <section id="home">
+   <h2>模块一：首页</h2>
+   <img src="https://raw.githubusercontent.com/.../background.jpg" alt="背景">
+   
+   <!-- 添加日期显示容器 -->
+   <div id="current-date" class="date-display"></div>
  
          // 初始化日期显示
          displayCurrentDate();
+   <!-- 正确的脚本标签位置 -->
+   <script>
+   // 确保DOM加载完成
+   document.addEventListener('DOMContentLoaded', function() {
+     // 日期显示函数
+     function displayCurrentDate() {
+       const currentDateElement = document.getElementById('current-date');
+       const now = new Date();
+       
+       // 添加时区修正 (中国大陆使用东八区)
+       const options = { 
+         timeZone: 'Asia/Shanghai',
+         year: 'numeric',
+         month: 'long',
+         day: 'numeric',
+         hour12: false
+       };
+       
+       currentDateElement.textContent = now.toLocaleDateString('zh-CN', options);
+     }
  
          // 每天更新日期
          setInterval(displayCurrentDate, 86400000); // 86400000毫秒 = 1天
-      </div>
      </script>
+     // 初始化显示
+     displayCurrentDate();
+ 
+     // 智能刷新策略 (解决时区切换问题)
+     const now = new Date();
+     const nextDay = new Date(now);
+     nextDay.setDate(now.getDate() + 1);
+     nextDay.setHours(0, 0, 0, 0);
+     
+     // 计算到次日0点的剩余时间
+     const timeout = nextDay - now;
+     setTimeout(function() {
+       displayCurrentDate();
+       // 之后每天刷新
+       setInterval(displayCurrentDate, 86400000);
+     }, timeout);
+   });
+   </script>
+ </section>
  </body>
  </body>  <!-- 模块二：缘起·灯 -->
     <section id="origin">
