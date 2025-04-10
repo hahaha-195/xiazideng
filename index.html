@@ -1,54 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>青春“虾”一站:大学生点亮灯彩非遗</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-</head>
-<body>
-    <!-- 导航栏 -->
-    <nav>
-        <div class="logo">
-            <h1>青春“虾”一站:大学生点亮灯彩非遗</h1>
-        </div>
-        <div class="date">
-            <p>今天是：<span id="current-date"></span></p>
-        </div>
-      <div class="search">
-            <input type="text" placeholder="请输入关键字">
-            <button>搜索</button>
-        </div>
-        <ul class="nav-links">
-            <li><a href="index.html">首页</a></li>
-            <li><a href="origin.html">缘起·灯</a></li>
-            <li><a href="people.html">传承·人</a></li>
-            <li><a href="exhibition.html">展示·物</a></li>
-        </ul>
-    </nav>
-  <section id="home">
-        <h2>模块一：首页</h2>
-                <img src="https://raw.githubusercontent.com/hahaha-195/xiazideng/main/背景.jpg"alt="背景">
-        // 动态显示当前日期
-        function displayCurrentDate() {
-            const currentDateElement = document.getElementById('current-date');
-            const now = new Date();
-            const formattedDate = now.toLocaleDateString('zh-CN', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-            });
-            currentDateElement.textContent = formattedDate;
-        }
-
-        // 初始化日期显示
-        displayCurrentDate();
-
-        // 每天更新日期
-        setInterval(displayCurrentDate, 86400000); // 86400000毫秒 = 1天
-    </script>
-</body>  <!-- 模块二：缘起·灯 -->
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>青春“虾”一站:大学生点亮灯彩非遗</title>
+     <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+ </head>
+ <body>
+     <!-- 导航栏 -->
+     <nav>
+         <div class="logo">
+             <h1>青春“虾”一站:大学生点亮灯彩非遗</h1>
+         </div>
+         <div class="date">
+             <p>今天是：<span id="current-date"></span></p>
+         </div>
+       <div class="search">
+             <input type="text" placeholder="请输入关键字">
+             <button>搜索</button>
+         </div>
+         <ul class="nav-links">
+             <li><a href="index.html">首页</a></li>
+             <li><a href="origin.html">缘起·灯</a></li>
+             <li><a href="people.html">传承·人</a></li>
+             <li><a href="exhibition.html">展示·物</a></li>
+         </ul>
+     </nav>
+   <section id="home">
+         <h2>模块一：首页</h2>
+      </section>
+                 <img src="https://raw.githubusercontent.com/hahaha-195/xiazideng/main/背景.jpg"alt="背景">
+  </section>
+  <div id="current-date">
+         // 动态显示当前日期
+         function displayCurrentDate() {
+             const currentDateElement = document.getElementById('current-date');
+             const now = new Date();
+             const formattedDate = now.toLocaleDateString('zh-CN', {
+                 year: 'numeric',
+                 month: 'long',
+                 day: 'numeric'
+             });
+             currentDateElement.textContent = formattedDate;
+         }
+ 
+         // 初始化日期显示
+         displayCurrentDate();
+ 
+         // 每天更新日期
+         setInterval(displayCurrentDate, 86400000); // 86400000毫秒 = 1天
+      </div>
+     </script>
+ </body>
+ </body>  <!-- 模块二：缘起·灯 -->
     <section id="origin">
         <h2>模块二：缘起·灯</h2>
         <p>盛桥虾子灯：一座临湖小镇的独特符号</p>
