@@ -8,6 +8,16 @@
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
  </head>
  <body>
+     <div id="home-container">
+         <!-- 背景层 -->
+         <div class="background-layer"></div>
+         
+         <!-- 内容层 -->
+         <section id="home" class="content-layer">
+ <div id="home-container">
+   <div class="background-layer"></div> <!-- 背景层 -->
+   <section class="content-layer"></section> <!-- 内容层 -->
+ </div>
      <!-- 导航栏 -->
      <nav>
          <div class="logo">
@@ -27,29 +37,13 @@
              <li><a href="exhibition.html">展示·物</a></li>
          </ul>
      </nav>
-   <section id="home">
-         <h2>模块一：首页</h2>
-                 <img src="https://raw.githubusercontent.com/hahaha-195/xiazideng/main/背景.jpg"alt="背景">
-         // 动态显示当前日期
-         function displayCurrentDate() {
-             const currentDateElement = document.getElementById('current-date');
-             const now = new Date();
-             const formattedDate = now.toLocaleDateString('zh-CN', {
-                 year: 'numeric',
-                 month: 'long',
-                 day: 'numeric'
-             });
-             currentDateElement.textContent = formattedDate;
-         }
   <section id="home">
    <h2>模块一：首页</h2>
-   <img src="https://raw.githubusercontent.com/.../background.jpg" alt="背景">
-   
+   <img src="https://raw.githubusercontent.com/hahaha-195/xiazideng/main/背景.jpg" alt="背景">
+ 
    <!-- 添加日期显示容器 -->
    <div id="current-date" class="date-display"></div>
  
-         // 初始化日期显示
-         displayCurrentDate();
    <!-- 正确的脚本标签位置 -->
    <script>
    // 确保DOM加载完成
@@ -58,7 +52,7 @@
      function displayCurrentDate() {
        const currentDateElement = document.getElementById('current-date');
        const now = new Date();
-       
+ 
        // 添加时区修正 (中国大陆使用东八区)
        const options = { 
          timeZone: 'Asia/Shanghai',
@@ -67,13 +61,10 @@
          day: 'numeric',
          hour12: false
        };
-       
+ 
        currentDateElement.textContent = now.toLocaleDateString('zh-CN', options);
      }
  
-         // 每天更新日期
-         setInterval(displayCurrentDate, 86400000); // 86400000毫秒 = 1天
-     </script>
      // 初始化显示
      displayCurrentDate();
  
@@ -82,7 +73,7 @@
      const nextDay = new Date(now);
      nextDay.setDate(now.getDate() + 1);
      nextDay.setHours(0, 0, 0, 0);
-     
+ 
      // 计算到次日0点的剩余时间
      const timeout = nextDay - now;
      setTimeout(function() {
@@ -92,9 +83,7 @@
      }, timeout);
    });
    </script>
- </section>
- </body>
- </body>  <!-- 模块二：缘起·灯 -->
+ </body> </body>  <!-- 模块二：缘起·灯 -->
     <section id="origin">
         <h2>模块二：缘起·灯</h2>
         <p>盛桥虾子灯：一座临湖小镇的独特符号</p>
