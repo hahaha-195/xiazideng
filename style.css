@@ -1,252 +1,381 @@
 /* style.css */
-body {
-  font-family: "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-  margin: 0;
-  min-height: 100vh;
-  color: #fff;
-  
-  background: 
-    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url("https://raw.githubusercontent.com/hahaha-195/xiazideng/main/背景.jpg")
-    center / cover no-repeat fixed;
-  
-  /* 移动端优化 */
-  @media (max-width: 768px) {
-    background-attachment: scroll;
-  }
-}
-
-/* 提升文字可读性 */
-main {
-  position: relative;
-  z-index: 1;
-}
-
-/* 导航栏样式 */
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background: linear-gradient(to right, #5B3F2A, #8B4513);
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  position: relative;
-  z-index: 100;
-}
-
-.logo {
-  flex: 1;
-  text-align: left;
-}
-
-.logo h1 {
-  margin: 0;
-  font-size: 1.5rem;
-  color: #D4AF37; /* 金色文字 */
-  font-weight: bold;
-}
-
-.search-group {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-}
-
-.search-group input {
-  background-color: #333333;
-  border: 1px solid #5B3F2A;
-  color: #FFFFFF;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  width: 150px; /* 可以根据需要调整宽度 */
-}
-
-.search-group button {
-  background-color: #D4AF37; /* 金色按钮 */
-  border: none;
-  color: #333333;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.search-group button:hover {
-  background-color: #FFD700; /* 悬停时的金色 */
-}
-
-.date {
-  font-size: 14px;
-  color: #FFFFFF;
-  margin-left: auto;
-}
-
-.nav-menu {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-menu li a {
-  color: #FFFFFF;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.3s ease;
-}
-
-.nav-menu li a:hover {
-  color: #FFD700; /* 悬停时的金色 */
-}
-
-/* 轮播图样式 */
-.swiper {
-  width: 50%;
-  height: 700px;
-}
-
-.swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #8B4513; /* 深棕色背景 */
-  border: 1px solid #FFC0CB; /* 深灰色边框 */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.swiper-slide img {
-  max-width: 100%;
-  height: auto;
-}
-
-.swiper-slide-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: #FFFFFF;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 10px; /* 减少内容的内边距 */
-  border-radius: 10px;
-}
-
-.swiper-slide h2 {
-  color: #FFD700; /* 金色标题 */
-  text-align: center;
-  font-size: 24px;
-}
-
-/* 模块样式 */
-section {
-  padding: 20px;
-  margin: 20px 0;
+ body {
+   font-family: "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+   margin: 0;
+   min-height: 100vh;
+   color: #fff;
  
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-section h2 {
-  color: #D4AF37; /* 金色标题 */
-}
-
-section img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 20px auto;
-}
-
-section p {
-  text-align: center;
-  font-size: 16px;
-  color: #333333; /* 深灰色文字 */
-}
-
-
-/* 模块二：缘起·灯样式 */
-#origin {
-    padding: 20px;
-    background-color:#FAF0E6;; /* 深灰色背景 */
-    color: #333333; /* 白色文字 */
-text-align: left; /* 文字左对齐 */
-}
-
-#origin h2, #origin h3 {
+   background: 
+     linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+     url("https://raw.githubusercontent.com/hahaha-195/xiazideng/main/背景.jpg")
+     center / cover no-repeat fixed;
+ 
+   /* 移动端优化 */
+   @media (max-width: 768px) {
+     background-attachment: scroll;
+   }
+ }
+ 
+ /* 提升文字可读性 */
+ main {
+   position: relative;
+   z-index: 1;
+ }
+ <style>
+ .parallax-container {
+   height: 100vh;
+   overflow-x: hidden;
+   overflow-y: auto;
+   perspective: 1px;
+ }
+ 
+ .background-layer {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: url("https://raw.githubusercontent.com/hahaha-195/xiazideng/main/背景.jpg") center/cover;
+   transform: translateZ(-1px);
+ }
+ 
+ .content-layer {
+   position: relative;
+   max-width: 800px;
+   margin: 20vh auto 0;
+   padding: 40px;
+   background: rgba(0, 0, 0, 0.7); /* 深色半透明 */
+   color: white;
+ /* 导航栏样式 */
+ .nav-container {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 1rem 2rem;
+   background: linear-gradient(to right, #5B3F2A, #8B4513);
+   border-radius: 10px;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+   position: relative;
+   z-index: 100;
+ }
+ </style>
+ 
+ <div class="parallax-container">
+   <div class="background-layer"></div>
+   <div class="content-layer">
+     <h2>你的标题</h2>
+     <p>滚动时背景保持固定...</p>
+   </div>
+ </div>
+ /* 导航栏样式 */
+ nav {
+   display: flex;
+     justify-content: space-between;
+     align-items: center;
+     background-color: #5B3F2A; /* 深棕色背景 */
+     padding: 10px 20px;
+ .logo {
+   flex: 1;
+   text-align: left;
+ }
+ 
+ .logo h1 {
+      margin: 0;
+     font-size: 24px;
+     color: #D4AF37; /* 金色文字 */
+   margin: 0;
+   font-size: 1.5rem;
+   color: #D4AF37; /* 金色文字 */
+   font-weight: bold;
+ }
+ .search {
+     display: flex;
+     gap: 5px;
+ 
+ .search-group {
+   display: flex;
+   gap: 0.5rem;
+   align-items: center;
+ }
+ 
+ .search input {
+     background-color: #333333;
+     border: 1px solid #5B3F2A;
+     color: #FFFFFF;
+     padding: 5px;
+ .search-group input {
+   background-color: #333333;
+   border: 1px solid #5B3F2A;
+   color: #FFFFFF;
+   padding: 0.5rem 1rem;
+   border-radius: 5px;
+   width: 150px; /* 可以根据需要调整宽度 */
+ }
+ 
+ .search button {
+     background-color: #D4AF37; /* 金色按钮 */
+     border: none;
+     color: #333333;
+     padding: 5px 10px;
+     cursor: pointer;
+ .search-group button {
+   background-color: #D4AF37; /* 金色按钮 */
+   border: none;
+   color: #333333;
+   padding: 0.5rem 1rem;
+   cursor: pointer;
+   border-radius: 5px;
+ }
+ .login a {
+     color: #D4AF37; /* 金色链接 */
+     text-decoration: none;
+     font-size: 14px;
+ 
+ .search-group button:hover {
+   background-color: #FFD700; /* 悬停时的金色 */
+ }
+ 
+ .date {
+     font-size: 14px;
+ }
+ #modules {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 20px;
+     padding: 20px;
+   font-size: 14px;
+   color: #FFFFFF;
+   margin-left: auto;
+ }
+ 
+ .module {
+     background-color: #333333;
+     border: 1px solid #5B3F2A;
+     padding: 20px;
+     width: calc(33.33% - 20px);
+     text-align: center;
+ .nav-menu {
+   list-style: none;
+   display: flex;
+   gap: 1.5rem;
+   margin: 0;
+   padding: 0;
+ }
+ 
+ .module h3 {
+     color: #D4AF37; /* 金色标题 */
+ }
+ .nav-links {
+     list-style: none;
+     display: flex;
+     gap: 20px;
+ .nav-menu li a {
+   color: #FFFFFF;
+   text-decoration: none;
+   font-size: 1rem;
+   transition: color 0.3s ease;
+ }
+ 
+ .nav-links li a {
+     color: #FFD700; /* 金色链接 */
+     text-decoration: none;
+     font-size: 16px;
+ .nav-menu li a:hover {
+   color: #FFD700; /* 悬停时的金色 */
+ }
+ 
+ /* 轮播图样式 */
+ .swiper {
+     width: 50%;
+     height: 700px;
+   width: 50%;
+   height: 700px;
+ }
+ 
+ .swiper-slide {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background-color: #8B4513; /* 深棕色背景 */
+     border: 1px solid #FFC0CB; /* 深灰色边框 */
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: #8B4513; /* 深棕色背景 */
+   border: 1px solid #FFC0CB; /* 深灰色边框 */
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+ }
+ 
+ .swiper-slide img {
+     max-width: 100%;
+     height: auto;
+   max-width: 100%;
+   height: auto;
+ }
+ 
+ .swiper-slide-content {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     text-align: center;
+     color: #FFFFFF;
+     background-color: rgba(0, 0, 0, 0.5);
+     padding: 10px; /* 减少内容的内边距 */
+     border-radius: 10px;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   text-align: center;
+   color: #FFFFFF;
+   background-color: rgba(0, 0, 0, 0.5);
+   padding: 10px; /* 减少内容的内边距 */
+   border-radius: 10px;
+ }
+ 
+ .swiper-slide h2 {
+     color: #FFD700; /* 金色标题 */
+     text-align: center;
+     font-size: 24px;
+ }
+ .swiper-slide .more {
+     display: inline-block;
+     background-color: #D4AF37; /* 金色按钮 */
+     color: #333333;
+     text-decoration: none;
+     padding: 5px 10px; /* 减少按钮的内边距 */
+     border-radius: 5px;
+     margin-top: 10px; /* 减少按钮与内容的间距 */
+   color: #FFD700; /* 金色标题 */
+   text-align: center;
+   font-size: 24px;
+ }
+ 
+ /* 模块样式 */
+ section {
+     padding: 20px;
+     margin: 20px 0;
+     background-color: #FAF0E6; /* 米白色背景 */
+     border: 1px solid #8B4513; /* 深棕色边框 */
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+   padding: 20px;
+   margin: 20px 0;
+   background-color: #FAF0E6; /* 米白色背景 */
+   border: 1px solid #8B4513; /* 深棕色边框 */
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+ }
+ 
+ section h2 {
     color: #D4AF37; /* 金色标题 */
-margin-bottom: 10px; /* 减少标题间距 */
-}
-
-#origin p {
-    line-height: 1.5; /* 调整行间距 */
-    margin-bottom: 10px; /* 减少段落间距 */
-text-align: left; /* 确保段落文字左对齐 */
-}
-
-footer {
-    background-color: #5B3F2A; /* 深棕色背景 */
-    padding: 5px 10px;
-    text-align: center;
-    color: #FFFFFF;
-}
-/* 模块三：传承·人样式 */
-#people {
-    padding: 20px;
-    background-color: #FAF0E6; /* 深灰色背景 */
-    color: #333333; /* 白色文字 */
-text-align: left; /* 文字左对齐 */
-}
-
-#people h2, #people h3 {
-    color: #D4AF37; /* 金色标题 */
-margin-bottom: 10px; /* 减少标题间距 */
-}
-
-#people p {
-    line-height: 1.5; /* 调整行间距 */
-    margin-bottom: 10px; /* 减少段落间距 */
-text-align: left; /* 确保段落文字左对齐 */
-}
-
-/* 传承人样式 */
-.传承人 {
-    margin-bottom: 20px;
-}
-/* 模块四：展示·物样式 */
-#exhibition {
-    padding: 20px;
-    background-color: #FAF0E6; /* 深灰色背景 */
-    color: #333333; /* 白色文字 */
-text-align: left; /* 文字左对齐 */
-}
-
-#exhibition h2, #exhibition h3 {
-    color: #D4AF37; /* 金色标题 */
-margin-bottom: 10px; /* 减少标题间距 */
-}
-
-#exhibition p {
-    line-height: 1.5; /* 调整行间距 */
-    margin-bottom: 10px; /* 减少段落间距 */
-text-align: left; /* 确保段落文字左对齐 */
-}
-
-/* 展示物品样式 */
-.exhibit-item {
-    margin-bottom: 20px;
-}
-
-.exhibit-item img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 10px 0;
-}
-
-/* 底部样式 */
-footer {
-    background-color: #5B3F2A; /* 深棕色背景 */
-    padding: 10px 20px; /* 减少底部的内边距 */
-    text-align: center;
-    color: #FFFFFF;
-}‌‍
+   color: #D4AF37; /* 金色标题 */
+ }
+ 
+ section img {
+     max-width: 100%;
+     height: auto;
+     display: block;
+     margin: 20px auto;
+   max-width: 100%;
+   height: auto;
+   display: block;
+   margin: 20px auto;
+ }
+ 
+ section p {
+     text-align: center;
+     font-size: 16px;
+     color: #333333; /* 深灰色文字 */
+   text-align: center;
+   font-size: 16px;
+   color: #333333; /* 深灰色文字 */
+ }
+ 
+ 
+ /* 模块二：缘起·灯样式 */
+ #origin {
+     padding: 20px;
+     background-color:#FAF0E6;; /* 深灰色背景 */
+     color: #333333; /* 白色文字 */
+ text-align: left; /* 文字左对齐 */
+ }
+ 
+ #origin h2, #origin h3 {
+     color: #D4AF37; /* 金色标题 */
+ margin-bottom: 10px; /* 减少标题间距 */
+ }
+ 
+ #origin p {
+     line-height: 1.5; /* 调整行间距 */
+     margin-bottom: 10px; /* 减少段落间距 */
+ text-align: left; /* 确保段落文字左对齐 */
+ }
+ 
+ footer {
+     background-color: #5B3F2A; /* 深棕色背景 */
+     padding: 5px 10px;
+     text-align: center;
+     color: #FFFFFF;
+ }
+ /* 模块三：传承·人样式 */
+ #people {
+     padding: 20px;
+     background-color: #FAF0E6; /* 深灰色背景 */
+     color: #333333; /* 白色文字 */
+ text-align: left; /* 文字左对齐 */
+ }
+ 
+ #people h2, #people h3 {
+     color: #D4AF37; /* 金色标题 */
+ margin-bottom: 10px; /* 减少标题间距 */
+ }
+ 
+ #people p {
+     line-height: 1.5; /* 调整行间距 */
+     margin-bottom: 10px; /* 减少段落间距 */
+ text-align: left; /* 确保段落文字左对齐 */
+ }
+ 
+ /* 传承人样式 */
+ .传承人 {
+     margin-bottom: 20px;
+ }
+ /* 模块四：展示·物样式 */
+ #exhibition {
+     padding: 20px;
+     background-color: #FAF0E6; /* 深灰色背景 */
+     color: #333333; /* 白色文字 */
+ text-align: left; /* 文字左对齐 */
+ }
+ 
+ #exhibition h2, #exhibition h3 {
+     color: #D4AF37; /* 金色标题 */
+ margin-bottom: 10px; /* 减少标题间距 */
+ }
+ 
+ #exhibition p {
+     line-height: 1.5; /* 调整行间距 */
+     margin-bottom: 10px; /* 减少段落间距 */
+ text-align: left; /* 确保段落文字左对齐 */
+ }
+ 
+ /* 展示物品样式 */
+ .exhibit-item {
+     margin-bottom: 20px;
+ }
+ 
+ .exhibit-item img {
+     max-width: 100%;
+     height: auto;
+     display: block;
+     margin: 10px 0;
+ }
+ 
+ /* 底部样式 */
+ footer {
+     background-color: #5B3F2A; /* 深棕色背景 */
+     padding: 10px 20px; /* 减少底部的内边距 */
+     text-align: center;
+     color: #FFFFFF;
+ }‌‍‌‍
