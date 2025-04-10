@@ -142,8 +142,7 @@ main {
 section {
   padding: 20px;
   margin: 20px 0;
-  background-color: #FAF0E6; /* 米白色背景 */
-  border: 1px solid #8B4513; /* 深棕色边框 */
+ 
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
